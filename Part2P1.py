@@ -3,6 +3,7 @@ import matplotlib.pyplot as plt
 def draw_graphics(points_num):
     x = lambda n: (n / (n + 1)) * (2 + (-1) ** n)
 
+    # Тут создаются списки подпоследовательностей, по которым будет строиться график
     n_odd, x_odd = [], []
     n_even, x_even = [], []
 
@@ -16,11 +17,16 @@ def draw_graphics(points_num):
             n_odd.append(i)
             x_odd.append(val)
 
+    # Подпоследовательность нечетных точек
     plt.scatter(n_odd, x_odd, color='blue', label='Нечётные точки')
+    # Подпоследовательность четных точек
     plt.scatter(n_even, x_even, color='red', label='Чётные точки')
 
+    # Верхний предел и экстремум
     plt.axhline(y=3, color='green', linestyle='--', label='sup $x_n$ / Предел (=3)')
+    # Нижний предел 
     plt.axhline(y=1, color='orange', linestyle='--', label='Предел (=1)')
+    # Нижняя грань
     plt.axhline(y=0.5, color='purple', linestyle='--', label='inf $x_n$ (=0.5)')
 
     
