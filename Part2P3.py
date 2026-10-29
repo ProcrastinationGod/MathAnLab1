@@ -16,7 +16,7 @@ while True:
     if abs(x(n_curr) - L) < eps:
         n0 = n_curr
         break
-    n += 2
+    n_curr += 2
 
 print(f"Для eps = {eps}: n0 = {n0}")
 
